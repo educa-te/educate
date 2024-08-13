@@ -1,0 +1,151 @@
+---
+import Container from "./Container.astro";
+import Card2 from "./Card2.astro";
+---
+
+<section id="eBooks">
+  <Container>
+    <h2 class="text-4xl text-center font-bold">
+      Explora nuestros e<span class="text-[#B9FE6D]">B</span>ooks<span
+        class="text-[#B9FE6D]">_</span>
+    </h2>
+    <!-- <div class="grid grid-cols-2 grid-rows-2 gap-4 m-12">
+      <div class="cardUno card">
+        <h3>1. Titulo uno</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
+          voluptatibus!
+        </p>
+        <img
+          src="../../public/portada.jpg"
+          alt=""
+          class="w-1/2 mx-auto rounded"
+        />
+        <a href="#"><span>Leer más ⭢</span></a>
+      </div>
+      <div class="cardDos card">
+        <h3>2. Titulo uno</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
+          voluptatibus!
+        </p>
+        <img
+          src="../../public/portada.jpg"
+          alt=""
+          class="w-1/2 mx-auto rounded"
+        />
+        <a href="#"><span>Leer más ⭢</span></a>
+      </div>
+      <div class="cardDos card">
+        <h3>3. Titulo uno</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
+          voluptatibus!
+        </p>
+        <img
+          src="../../public/portada.jpg"
+          alt=""
+          class="w-1/2 mx-auto rounded"
+        />
+        <a href="#"><span>Leer más ⭢</span></a>
+      </div>
+      <div class="cardUno card">
+        <h3>4. Titulo uno</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
+          voluptatibus!
+        </p>
+        <img
+          src="../../public/portada.jpg"
+          alt=""
+          class="w-1/2 mx-auto rounded"
+        />
+        <a href="#"><span>Leer más ⭢</span></a>
+      </div>
+    </div> -->
+    <div class="max-w-2xl mx-auto mt-10">
+      <div class="carousel relative">
+        
+        <div class="carousel-item flex gap-4">
+          <Card2 title1="Domina las Fórmulas y Funciones:" title2="El Poder Oculto de las Hojas de Cálculo" href="#" img="../../public/portada2.png"/>
+          <Card2 title1="Domina las Fórmulas y Funciones:" title2="El Poder Oculto de las Hojas de Cálculo" href="#" img="../../public/portada2.png"/>
+        </div>
+        <div class="carousel-item flex gap-4">
+          <Card2 title1="Domina las Fórmulas y Funciones:" title2="El Poder Oculto de las Hojas de Cálculo" href="#" img="../../public/portada2.png"/>
+          <Card2 title1="Domina las Fórmulas y Funciones:" title2="El Poder Oculto de las Hojas de Cálculo" href="#" img="../../public/portada2.png"/>
+        </div>
+        <div class="carousel-item flex gap-4">
+          <Card2 title1="Domina las Fórmulas y Funciones:" title2="El Poder Oculto de las Hojas de Cálculo" href="#" img="../../public/portada2.png"/>
+          <Card2 title1="Domina las Fórmulas y Funciones:" title2="El Poder Oculto de las Hojas de Cálculo" href="#" img="../../public/portada2.png"/>
+        </div>
+      </div>
+      <div class="flex justify-between mt-5">
+        <button id="prev" class="bg-gray-700 text-white px-4 py-2">Prev</button>
+        <button id="next" class="bg-gray-700 text-white px-4 py-2">Next</button>
+      </div>
+    </div>
+
+    <script>
+      let currentIndex = 0;
+  
+      // Asegúrate de seleccionar correctamente los elementos y convertirlos a HTMLElement
+      const items = Array.from(document.querySelectorAll('.carousel-item')) as HTMLElement[];
+      const totalItems = items.length;
+  
+      document.getElementById('next')!.addEventListener('click', () => {
+        moveToNextItem();
+      });
+  
+      document.getElementById('prev')!.addEventListener('click', () => {
+        moveToPrevItem();
+      });
+  
+      function updateCarousel() {
+        items.forEach((item, index) => {
+          item.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+      }
+  
+      function moveToNextItem() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+      }
+  
+      function moveToPrevItem() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+      }
+    </script>
+  </Container>
+</section>
+
+<style>
+  /* .cardUno {
+    @apply text-white bg-[#1F1F1F];
+  }
+
+  .cardDos {
+    @apply bg-[#fff];
+  }
+
+  .card {
+    @apply rounded-xl p-4 flex flex-col gap-2;
+  }
+
+  .card h3 {
+    @apply text-3xl;
+  }
+
+  .card p {
+    @apply font-light text-sm;
+  } */
+
+  .carousel {
+    display: flex;
+    overflow: hidden;
+  }
+  .carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+</style>

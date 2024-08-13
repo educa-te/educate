@@ -1,0 +1,55 @@
+---
+import Container from "./Container.astro";
+import DownloadIcon from "./DownloadIcon.astro";
+---
+
+<section id="Hero" class="bg-[#F1F0F5]">
+  <Container>
+    <div class="h-full md:flex md:justify-between pt-16 pb-28">
+      <!-- Contenedor para móviles -->
+      <div class="md:hidden flex flex-col items-center gap-2">
+        <img
+          src="../../public/img-hero.png"
+          alt=""
+          class="size-32 md:size-72 mx-auto mb-2"
+        />
+        <h1 class="text-4xl font-bold">
+          Desarrolla Habilidades Digitales con Nuestros eBooks
+        </h1>
+        <span class="">
+          Aprende a desarrollar habilidades digitales con nuestros eBooks,
+          diseñados para llevarte paso a paso hacia el éxito profesional.
+        </span>
+        <a
+          href="#"
+          class="bg-[#1F1F1F] text-center rounded py-1 font-semibold w-3/4 md:w-1/2 text-white mt-4"
+        >
+          Ver eBooks Disponibles
+        </a>
+      </div>
+
+      <!-- Contenedor para escritorio -->
+      <div class="hidden md:flex md:w-1/2 flex-col gap-4">
+        <h1 class="text-5xl font-bold ">
+          Desarrolla Habilidades Digitales con Nuestros eBooks
+        </h1>
+        <span class=" text-xl text-gray-500">
+          Diseñados para llevarte <strong class="text-gray-700">paso a paso</strong> hacia el éxito profesional 📈🚀
+        </span>
+        <a
+          href="#"
+          class="flex bg-[#00BF63] gap-2 font-bold text-white rounded-xl px-4 py-2 w-3/5 justify-center pb-2.5 shadow-md shadow-stone-400 "
+        >
+          Descarga gratis ahora <DownloadIcon />
+        </a>
+      </div>
+
+      <!-- Imagen para escritorio -->
+      <img
+        src="../../public/img-hero.png"
+        alt=""
+        class="hidden md:block size-72"
+      />
+    </div>
+  </Container>
+</section>

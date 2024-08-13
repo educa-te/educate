@@ -1,0 +1,20 @@
+{
+  "name": "educa-te",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@types/nodemailer": "^6.4.15",
+    "astro": "^4.10.2",
+    "nodemailer": "^6.9.14",
+    "resend": "^3.5.0",
+    "tailwindcss": "^3.4.4"
+  }
+}

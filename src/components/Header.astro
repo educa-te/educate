@@ -1,0 +1,57 @@
+---
+import ArrowIcon from "./ArrowIcon.astro";
+import BookIncon from "./DownloadIcon.astro";
+---
+
+<header class="bg-[#F1F0F5] shadow-md">
+    <div class="flex justify-around px-4 md:px-12 py-4 items-center gap-16">
+        <div class="flex items-center gap-2">
+            <!-- <BookIncon /> -->
+            <img src="../../public/Educate.png" alt="logo-educate" class="size-12 rounded-xl shadow-md shadow-stone-400">
+            <h1 class="text-2xl font-bold ml-2">&#60;Educa&#62;&#60;<span class="text-[#00BF63]">/</span>te&#62;</h1>
+        </div>
+
+        <!-- Menú hamburguesa para móviles -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+                <!-- Ícono de hamburguesa -->
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menú de navegación -->
+        <ul class="hidden md:flex items-center gap-4 tracking-widest text-gray-500">
+            <li class="hover:text-gray-800"><a href="">Inicio</a></li>
+            <!-- <li>eBooks</li> -->
+            <li class="hover:text-gray-800"><a href="">Nosotros</a></li>
+            <li class="hover:text-gray-800"><a href="">Contacto</a></li>
+            
+        </ul>
+        <a href="#" class="bg-[#25262B] flex gap-2  text-white rounded-xl px-4 py-2 ml-6 shadow-md shadow-stone-400">Ver eBooks <ArrowIcon /></a>
+    </div>
+
+    <!-- Menú desplegable para móviles -->
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200">
+        <ul class="py-2">
+            <li class="px-4 py-2">Inicio</li>
+            <!-- <li class="px-4 py-2">eBooks</li> -->
+            <li class="px-4 py-2">Sobre Nosotros</li>
+            <li class="px-4 py-2">Contacto</li>
+            <a href="#" class="block px-4 py-2 border-t border-gray-200">Ver eBooks</a>
+        </ul>
+    </div>
+</header>
+
+<script>
+    // JavaScript para manejar el menú desplegable en móviles
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden'); // Alternar la visibilidad del menú móvil
+    });
+</script>

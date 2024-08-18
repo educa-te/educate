@@ -26,20 +26,16 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: npm run build
-      - name: List files for debugging
-        run: ls -la ./path/to/build/output
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: ./path/to/build/output # Asegúrate de que esta ruta sea correcta
+          path: ./public # Actualiza esta ruta a la ubicación correcta de tu salida de construcción
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -47,4 +43,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }} # Usa el token de GitHub para el despliegue

@@ -9,18 +9,18 @@ import Tool from "./ico/Tool.astro";
 
 <section>
   <Container>
-    <div class="bg-[#25262B] rounded-t-3xl">
+    <div class="bg-[#25262B] rounded-xl md:rounded-t-3xl">
       <h2
-        class="flex bg-white text-lg justify-center gap-2 block w-1/4 rounded-md mx-auto pt-1 pb-2 font-bold text-green-600 uppercase"
+        class="flex bg-white text-lg justify-center gap-2 block w-4/5 md:w-1/4 rounded-b-md mx-auto pb-2 font-bold text-green-600 uppercase"
       >
         Descarga ahora <DownloadIcon />
       </h2>
-      <div class="flex py-20 px-12 gap-12 items-center">
-        <div class="w-1/2 gap-2 flex flex-col mb-8">
-          <h3 class="text-4xl text-white">
+      <div class="flex flex-col pt-6 pb-12 md:py-20 md:px-12 md:gap-12 items-center px-4">
+        <div class="w-full md:w-1/2 gap-2 flex flex-col mb-4 text-center ">
+          <h3 class="text-4xl text-white ">
             Accede a nuestro primer eBook de forma gratuita
           </h3>
-          <span class="text-gray-500">
+          <span class="text-gray-400 text-xl">
             Diseñados para llevarte <strong class="text-green-500"
               >paso a paso</strong
             > hacia el éxito profesional 📈🚀
@@ -29,26 +29,34 @@ import Tool from "./ico/Tool.astro";
         <Form />
       </div>
     </div>
-    <div class="flex gap-2 py-2">
-      <div class="flex flex-col bg-[#F1F0F5] w-full p-8 rounded-bl-3xl">
+    <div class="md:flex md:gap-2 py-2">
+      <div class="bg-[#F1F0F5] w-full p-4 rounded-3xl mb-2 md:rounded-bl-3xl">
+        <div class="flex gap-2">
         <div class="bg-[#25262B] p-2 rounded-xl self-start mb-2">
           <NewPost />
         </div>
-        <span class="text-xl font-bold">Nuevas Publicaciones</span>
+        <span class="text-xl font-bold pt-2">Nuevas Publicaciones</span>
+      </div>
+        <div class="flex flex-col">
         <span class="text-gray-700"
           >Descubre los últimos lanzamientos de ebooks</span
         >
         <a href="#" class="text-green-500 font-medium mt-2">Explorar más ➜</a>
       </div>
-      <div class="flex flex-col bg-[#F1F0F5] w-full p-8 rounded-br-3xl">
+      </div>
+      <div class="bg-[#F1F0F5] w-full p-4 rounded-3xl mb-2 md:rounded-bl-3xl">
+        <div class="flex gap-2">
         <div class="bg-[#25262B] p-2 rounded-xl self-start mb-2">
           <SubsIcon />
         </div>
-        <span class="text-xl font-bold">Suscríbete</span>
+        <span class="text-xl font-bold pt-2">Suscríbete</span>
+      </div>
+        <div class="flex flex-col">
         <span class="text-gray-700"
           >Recibe actualizaciones de nuevos ebooks</span
         >
         <a href="#" class="text-green-500 font-medium mt-2">Suscribirse ➔</a>
+      </div>
       </div>
     </div>
   </Container>

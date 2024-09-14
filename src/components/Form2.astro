@@ -1,58 +1,33 @@
----
-import Container from "./Container.astro";
----
+<section id="contact-form">
+  <div class="h-full">
+    <form name="email-outin-1" action="" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/.netlify/functions/send-email">
+      <label
+        for="email"
+        class="block mb-2 text-sm font-medium"
+        >Tu email</label
+      >
+      <input
+        type="email"
+        name="email"
+        id="email"
+        aria-describedby="helper-text-explanation"
+        class="bg-white-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="nombre@educate.com"
+        required
+      />
 
-<section id="form" class="">
-  <Container>
-    <div class="flex bg-[#1F1F1F] text-white rounded-2xl relative">
-      <div class="w-[54%] p-4">
-        <h2 class="text-4xl ">
-          ACCEDE A NUESTRO PRIMER EBOOK DE FORMA GRATUITA
-        </h2>
-        <h3 class="text-end">Envianos tu solicitud ⭢</h3>
-      </div>
-      <div class="bg-white text-black w-[36%] shadow-md min-h-96 ">
-        <form id="myForm" class="flex flex-col p-4 m-4 border border-[#B9FE6D] rounded h-[80%]">
-          <label for="POST-name" ><span class="bg-[#B9FE6D]">Nombre:</span></label>
-          <input id="POST-name" type="text" name="name" class="border border-[#B9FE6D] rounded"/>
-          
-          <label for="POST-email" ><span class="bg-[#B9FE6D]">Correo:</span></label>
-          <input id="POST-email" type="text" name="email" class="border border-[#B9FE6D] rounded"/>
-          <input type="submit" value="Enviar Solicitud" class="border-[#B9FE6D] border rounded mt-4"/>
-        </form>
-      </div>
-    </div>
-  </Container>
+      <p
+        id="helper-text-explanation"
+        class="mt-2 text-sm text-gray-500 dark:text-gray-400"
+      >
+      Tu privacidad es nuestra prioridad. Revisa nuestra <a
+          href="#"
+          class="font-medium text-blue-600 hover:underline dark:text-blue-500"
+          >Política de Privacidad</a
+        >.
+      </p>
+      <!-- <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mt-4 text-center">Enviar</button> -->
+      <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mt-4 text-center" > Enviar </button>
+    </form>
+  </div>
 </section>
-
-<script>
-  document.getElementById('myForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    var formData = {
-      name: document.getElementById('POST-name').value,
-      email: document.getElementById('POST-email').value,
-    };
-  
-    fetch('https://script.google.com/macros/s/AKfycbxBUQvMQ2my4xLPBZr2UTKCp1LxpxtHgxGeMXdzu1xdb1Eo-J4e7LGHOTn6nhotuzeEWw/exec', {
-      method: 'POST',
-      body: JSON.stringify(formData),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      if(data.result === "success") {
-        alert("Formulario enviado con éxito!");
-      } else {
-        alert("Hubo un error al enviar el formulario.");
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert("Hubo un error al enviar el formulario.");
-    });
-  });
-  </script>

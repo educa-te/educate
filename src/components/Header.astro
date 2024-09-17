@@ -4,7 +4,7 @@ import BookIncon from "./DownloadIcon.astro";
 ---
 
 <header class="bg-[#F1F0F5] border-b border-gray-400">
-    <div class="flex justify-between md:justify-around px-4 md:px-12 py-4 items-center gap-16">
+    <div class="flex justify-between px-4 py-4 items-center gap-16 md:w-[90%] md:mx-auto">
         <div class="flex items-center gap-2">
             <!-- <BookIncon /> -->
             <img src="/Educate.png" alt="logo-educate" class="size-12 rounded-xl shadow-md shadow-stone-400">
@@ -21,13 +21,13 @@ import BookIncon from "./DownloadIcon.astro";
 
         <!-- Menú de navegación -->
         <ul class="hidden md:flex items-center gap-4 tracking-widest text-gray-500">
-            <li class="hover:text-gray-800"><a href="">Inicio</a></li>
+            <li class="hover:text-gray-800"><a href="#">Inicio</a></li>
             <!-- <li>eBooks</li> -->
             <li class="hover:text-gray-800"><a href="">Nosotros</a></li>
             <li class="hover:text-gray-800"><a href="">Contacto</a></li>
             
         </ul>
-        <a href="#" class="bg-[#25262B] flex gap-2  text-white rounded-xl px-4 py-2 ml-6 shadow-md shadow-stone-400 hidden md:block">Ver eBooks <ArrowIcon /></a>
+        <a href="#" class="bg-[#25262B] gap-2  text-white rounded-xl px-4 py-2 ml-6 shadow-md shadow-stone-400 hidden md:flex">Ver eBooks <ArrowIcon /></a>
     </div>
 
     <!-- Menú desplegable para móviles -->

@@ -9,27 +9,43 @@ import Check from "./ico/Check.astro";
 
 <section id="Hero" class="bg-[#F1F0F5]">
   <Container>
-    <div class="h-full md:flex md:justify-between py-8">
-      <!-- Contenedor para móviles -->
-      <h1 class="text-4xl font-medium text-center">
-        Somos la solución para adquirir habilidades digitales<br><span class="text-[#00BF63] animate-fadeInOut">con ebooks</span>
+    <div class="hidden md:block">
+      <Banner />
+    </div>
+    <div class="h-full md:justify-between py-8">
+      <h1 class="text-4xl font-medium text-center md:hidden md:mx-auto">
+        Somos la solución para adquirir habilidades digitales<br><span
+          class="text-[#00BF63] animate-fadeInOut"
+        >
+          con ebooks</span
+        >
       </h1>
-      <div class="md:hidden flex flex-col items-center gap-2">
-        <img
+      <div class="flex flex-col items-center gap-2">
+        <div
+          class="w-full md:w-[90%] px-4 pt-8 pb-4 md:pb-0 md:pt-0 flex md:items-center"
+        >
+          <ul class="md:mb-12">
+            <!-- <img
           src="/img-hero.png"
           alt=""
-          class="size-32 md:size-72 mx-auto mb-2 hidden"
-        />
-        <div class="w-full px-4 pt-8 pb-4">
-          <ul>
+          class="size-72 mx-auto hidden md:block"
+          
+        /> -->
+            <h1 class="text-5xl font-semibold hidden md:block pb-12">
+              Somos la solución para adquirir habilidades digitales<span
+                class="text-[#00BF63] animate-fadeInOut"
+              >
+                con ebooks</span
+              >
+            </h1>
             <li class="flex pb-2 gap-2">
               <Check />
               <span>Empezar no cuesta nada</span>
             </li>
             <li class="flex pb-2 gap-2">
               <div class="w-[24px] h-[24px]">
-              <Check />
-            </div>
+                <Check />
+              </div>
               <span>Herramientas para crecer tu negocio en un solo lugar</span>
             </li>
             <li class="flex gap-2">
@@ -37,6 +53,10 @@ import Check from "./ico/Check.astro";
               <span>Soporte que te ayudará a crecer</span>
             </li>
           </ul>
+          <div class="w-3/4 hidden md:block">
+            <img src="/portada.png" alt="" />
+            <Form2 />
+          </div>
         </div>
         <!-- <span class="">
           Aprende a desarrollar habilidades digitales con nuestros eBooks,
@@ -48,26 +68,13 @@ import Check from "./ico/Check.astro";
         >
           Ver eBooks Disponibles
         </a> -->
-        <div>
+        <div class="md:hidden">
           <Banner />
-          <div class="bg-[#2A707C] w-full p-4 text-white text-center">
-            <h3 class="text-xl font-bold">Aprende los fundamentos de hojas de cálculo en minutos</h3>
-            <span class="font-semibold">¡Deja tu correo 📧 y te lo enviamos al instante!</span>
-          </div>
-          <img src="/portada.png" alt="">
+          <img src="/portada.png" alt="" />
+          <Form2 />
         </div>
-        <div class="px-4">
-        
-        <Form2 />
+        <div class="px-4"></div>
       </div>
-      </div>
-
-      <!-- Imagen para escritorio -->
-      <img
-        src="/img-hero.png"
-        alt=""
-        class="hidden md:block size-72"
-      />
     </div>
   </Container>
 </section>
